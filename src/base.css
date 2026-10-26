@@ -1,0 +1,218 @@
+/* base.css — shared styles for the Calmer Gifting printables.
+   Warm, calm, ink-friendly: every sheet prints well in black & white.
+   No web fonts, no images, no external requests: everything is local. */
+
+@page {
+  size: Letter;
+  margin: 0.75in 0.7in 0.85in;
+
+  @bottom-center {
+    content: "Page " counter(page) " of " counter(pages);
+    font-family: "Liberation Sans", "DejaVu Sans", sans-serif;
+    font-size: 8pt;
+    color: #b5a68f;
+  }
+}
+
+body {
+  font-family: "Liberation Sans", "DejaVu Sans", sans-serif;
+  font-size: 10pt;
+  line-height: 1.5;
+  color: #4a3e31;
+}
+
+h1, h2, h3 {
+  font-family: "Liberation Serif", "DejaVu Serif", serif;
+  color: #8a4b2f;
+  margin: 0;
+}
+
+p { margin: 0 0 6pt; }
+
+/* ---------- warm usage page (first page of every PDF) ---------- */
+
+.usage {
+  page-break-after: always;
+  break-after: page;
+}
+
+.kicker {
+  font-size: 8.5pt;
+  letter-spacing: 1.6pt;
+  text-transform: uppercase;
+  color: #a08b74;
+  margin: 0 0 8pt;
+}
+
+.usage h1 {
+  font-size: 23pt;
+  line-height: 1.2;
+  margin: 0 0 4pt;
+}
+
+.lead {
+  font-size: 11.5pt;
+  line-height: 1.55;
+  color: #6b5b49;
+  margin: 10pt 0 4pt;
+}
+
+.usage .rule {
+  border: 0;
+  border-top: 1.5pt solid #e0d2bd;
+  margin: 12pt 0 4pt;
+}
+
+.usage h2 {
+  font-size: 12pt;
+  margin: 14pt 0 5pt;
+}
+
+.usage ol, .usage ul {
+  margin: 0 0 6pt;
+  padding-left: 16pt;
+}
+
+.usage li { margin-bottom: 5pt; }
+.usage ul.inside li { margin-bottom: 2pt; }
+
+.kindnote {
+  background: #faf4ea;
+  border: 1pt solid #e6d7c3;
+  border-left: 3pt solid #c98a5e;
+  border-radius: 4pt;
+  padding: 9pt 11pt;
+  margin: 13pt 0 4pt;
+}
+
+.kindnote p { margin: 0; }
+
+.printtip {
+  color: #8a7a66;
+  font-size: 9pt;
+  margin-top: 12pt;
+}
+
+/* ---------- sheet pages (the part you fill in) ---------- */
+
+.sheet header { margin-bottom: 8pt; }
+
+.sheet h2 { font-size: 17pt; }
+
+.sheet .sub {
+  color: #8a7a66;
+  font-size: 9.5pt;
+  margin-top: 2pt;
+}
+
+.pagebreak {
+  page-break-before: always;
+  break-before: page;
+}
+
+/* ruled tables for writing in */
+
+table.grid {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 4pt;
+}
+
+table.grid th {
+  font-family: "Liberation Serif", "DejaVu Serif", serif;
+  font-size: 9.5pt;
+  font-weight: bold;
+  text-align: left;
+  color: #7c4a2d;
+  background: #f5ead9;
+  border-bottom: 1.25pt solid #b98a5c;
+  padding: 5pt 6pt;
+}
+
+table.grid td {
+  border-bottom: 0.75pt solid #d9cbb6;
+  padding: 5pt 6pt;
+  height: 22pt;
+  vertical-align: middle;
+  font-size: 9pt;
+}
+
+table.grid td.num { text-align: right; }
+
+.hint {
+  color: #b3a48f;
+  font-size: 8pt;
+  font-style: italic;
+}
+
+/* checkboxes drawn in CSS — nothing to buy, nothing to plug in */
+
+.cb {
+  display: inline-block;
+  width: 11pt;
+  height: 11pt;
+  border: 1.2pt solid #9b8468;
+  border-radius: 2pt;
+  vertical-align: -1.5pt;
+}
+
+/* labeled write-in lines */
+
+.line {
+  display: inline-block;
+  border-bottom: 1pt solid #b7a88f;
+  height: 13pt;
+  vertical-align: bottom;
+}
+
+.line.short { width: 90pt; }
+.line.med   { width: 150pt; }
+.line.long  { width: 240pt; }
+.line.full  { width: 100%; }
+
+/* soft boxes and checklist sections */
+
+.box {
+  border: 1pt solid #e2d5c0;
+  border-radius: 5pt;
+  background: #fffdf8;
+  padding: 9pt 11pt;
+  margin-bottom: 10pt;
+}
+
+.box h3 { font-size: 11.5pt; margin-bottom: 4pt; }
+.box p { margin: 0 0 4pt; }
+.box ul { margin: 0; padding-left: 14pt; }
+.box li { margin-bottom: 3pt; }
+
+.day {
+  border: 1pt solid #e2d5c0;
+  border-radius: 5pt;
+  background: #fffdf8;
+  padding: 8pt 11pt 5pt;
+  margin-bottom: 9pt;
+}
+
+.day h3 {
+  font-size: 12pt;
+  margin-bottom: 4pt;
+  border-bottom: 0.75pt solid #e6d9c4;
+  padding-bottom: 2pt;
+}
+
+.day ul { list-style: none; margin: 0; padding: 0; }
+.day li { margin: 0 0 6pt; }
+
+/* thank-you note templates */
+
+.card {
+  border: 1pt solid #e2d5c0;
+  border-left: 3pt solid #c98a5e;
+  border-radius: 5pt;
+  background: #fffdf8;
+  padding: 9pt 12pt 7pt;
+  margin-bottom: 10pt;
+}
+
+.card h3 { font-size: 11.5pt; margin-bottom: 5pt; }
+.card p { margin: 0 0 5pt; line-height: 1.9; }
